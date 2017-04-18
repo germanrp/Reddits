@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+body {
+   	background-color: #5dace9;
+}
+h1, h2, h3 {
+   	font-family:'Indie Flower', sans-serif;
+}
+
+.main-frame {
+    background-color: #FFF;
+    padding: 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 20px;
+}

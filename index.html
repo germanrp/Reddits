@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>    
+    <!-- INCLUDE REQUIRED THIRD PARTY LIBRARY JAVASCRIPT AND CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<script src="js/vendor/angular.min.js"></script>
+
+	<!-- INCLUDE APPLICATION SPECIFIC CSS AND JAVASCRIPT -->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/services/apiService.js"></script>
+	<script type="text/javascript" src="js/controllers/mainController.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">  
+  </head>
+  <body>
+  	<div class="container main-frame" ng-app="MyApp" ng-controller="mainController">
+		<div class="container-fluid outerdiv">
+			<noscript>
+				<div class="nojs">
+					Javascript is either disabled or not supported in your browser. Please enable it or use a Javascript enabled browser.
+				</div>
+			</noscript>
+			<h2>This is the list of SubReddits for <span ng-bind="value"></span></h2>
+			
+			<div class="subtitle">
+				<h3> Or you can modify the filter here:</h3>
+				<form ng-submit="fetchSubRedditsGiven()">
+					  <input type="text" name="value" ng-model="value">
+					  <input type="submit" value="Update Filter">
+				</form>
+			</div>
+			
+			
+			<table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
+					<!-- Table Header -->
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Subscribers</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<!-- Table Header -->
+					<!-- Table Body -->
+					<tbody>	  
+				        <tr ng-repeat="CU in listOfSubReddits" ng-class-odd="'odd'" ng-class-even="'even'">  
+				            <td>{{CU.data.title}}</td>  
+				            <td>{{CU.data.subscribers}}</td>  
+				            <td>{{CU.data.public_description}}</td>    
+				        </tr>  
+					</tbody>
+					<!-- Table Body -->
+			</table>
+		</div>
+	</div>
+  </body>
+</html>
